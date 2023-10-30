@@ -25,5 +25,15 @@ export default defineConfig((config) => {
       vue({ include: [/\.vue$/, /\.md$/] }),
       config.mode === 'single-file' ? viteSingleFile() : undefined,
     ],
+    resolve: {
+      alias: {
+        '@components': '/src/components',
+        '@common': '/src/common',
+      },
+    },
+    server: {
+      host: '0.0.0.0',
+      port: 5173,
+    },
   };
 });
